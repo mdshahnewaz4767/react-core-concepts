@@ -1,31 +1,23 @@
 import './App.css';
 
 function App() { 
+  const naiyok = ["Anwar", "Jafor", "Alomgir", "Razzak"];
   return (
     <div className="App">
       <header className="App-header">
-       <p>I am a React Person</p>
-       <Person name="Rubel" nayika="Moushumi"></Person>
-       <Person name="Jasim" nayika="Sabana"></Person>
-       <Person name="Bapparaz" nayika="Cheka"></Person>
-       <Person name="Elias" nayika="Bobita"></Person>
+        <p>I am a React Person</p>
+        <Person name={naiyok[0]} job="Dorsok"></Person>
+        <Person name="Newaz" job="Football"></Person>
       </header>
     </div>
   );
 }
 
-//Make a Component
 function Person(props){
-  const personStyle = {
-    margin: '10px',
-    padding: '10px',
-    border: '2px solid lightGreen'
-  };
-
   return (
-    <div style = {personStyle}>
-      <h2>Name: {props.name}</h2>
-      <h3>Hero of {props.nayika}</h3>
+    <div style={{border: '2px solid salmon', margin: '10px', width: '400px'}}>
+      <h3>My Name: {props.name}</h3>
+      <p>My Profession: {props.job}</p>
     </div>
   )
 }
