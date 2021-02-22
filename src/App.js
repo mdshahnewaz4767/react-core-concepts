@@ -23,6 +23,7 @@ function App() {
           Edit done <code>src/App.js</code> and save to reload.
         </p>
         <h1 style = {style}>I am {person.name}</h1>
+        <h3 style = {{backgroundColor: 'cyan', color: 'black'}}>Job: {person.job}</h3>
       </header>
     </div>
   );
