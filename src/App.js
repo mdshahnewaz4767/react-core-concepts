@@ -15,14 +15,14 @@ function App() {
 
 //Make a Component
 function Person(){
-  const personStyle = {
-    margin: '10px',
-    padding: '10px',
-    border: '2px solid lightGreen'
-  };
+  // const personStyle = {
+  //   margin: '10px',
+  //   padding: '10px',
+  //   border: '2px solid lightGreen'
+  // };
 
   return (
-    <div style = {personStyle}>
+    <div style = {{margin: '10px', padding: '10px', border: '2px solid salmon'}}>
       <h2>Name: Muhammad Shahnewaz</h2>
       <h3>Hero of the year</h3>
     </div>
