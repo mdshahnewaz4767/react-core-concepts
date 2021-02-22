@@ -5,26 +5,27 @@ function App() {
     <div className="App">
       <header className="App-header">
        <p>I am a React Person</p>
-       <Person></Person>
-       <Person></Person>
-       <Person></Person>
+       <Person name="Rubel" nayika="Moushumi"></Person>
+       <Person name="Jasim" nayika="Sabana"></Person>
+       <Person name="Bapparaz" nayika="Cheka"></Person>
+       <Person name="Elias" nayika="Bobita"></Person>
       </header>
     </div>
   );
 }
 
 //Make a Component
-function Person(){
-  // const personStyle = {
-  //   margin: '10px',
-  //   padding: '10px',
-  //   border: '2px solid lightGreen'
-  // };
+function Person(props){
+  const personStyle = {
+    margin: '10px',
+    padding: '10px',
+    border: '2px solid lightGreen'
+  };
 
   return (
-    <div style = {{margin: '10px', padding: '10px', border: '2px solid salmon'}}>
-      <h2>Name: Muhammad Shahnewaz</h2>
-      <h3>Hero of the year</h3>
+    <div style = {personStyle}>
+      <h2>Name: {props.name}</h2>
+      <h3>Hero of {props.nayika}</h3>
     </div>
   )
 }
