@@ -11,9 +11,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>I am a React Person</p>
-        <Product name={products[0].name} price={products[0].price}></Product>
-        <Product name={products[1].name} price={products[1].price}></Product>
-        <Product name={products[2].name} price={products[2].price}></Product>
+        <Product product={products[0]}></Product>
+        <Product product={products[1]}></Product>
+        <Product product={products[2]}></Product>
         <Person name={naiyok[0]} job="Dorsok"></Person>
         <Person name="Newaz" job="Football"></Person>
       </header>
@@ -31,10 +31,12 @@ function Product(props) {
     float: 'left',
     margin: '5px'
   }
+  const {name, price} = props.product;
+  console.log(name, price);
   return (
     <div style={productStyle}>
-      <h2>{props.name}</h2>
-      <h4>{props.price}</h4>
+      <h2>{name}</h2>
+      <h4>{price}</h4>
       <button>Buy now</button>
     </div>
   )
