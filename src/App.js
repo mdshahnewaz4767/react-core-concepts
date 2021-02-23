@@ -10,8 +10,8 @@ function App() {
   ]
   const productNames = products.map(product => product.name);
   console.log(productNames);
-  // const naiyokNames = naiyoks.map(naiyok => naiyok);
-  // console.log(naiyokNames);
+  const naiyokNames = naiyoks.map(naiyok => naiyok);
+  console.log(naiyokNames);
 
   return (
     <div className="App">
@@ -37,17 +37,18 @@ function App() {
   );
 }
 
+//digit count
 function Counter(){
   const [count, setCount] = useState(10);
   const handleIncrease = () => {
     console.log('clicked');
-    // const newCount = count + 1;
     setCount(count + 1);
   };
   return (
     <div>
       <h1>Counter: {count}</h1>
-      <button onClick={handleIncrease}>button</button>
+      <button onClick={handleIncrease}>Increase</button>
+      <button onClick={() => {setCount(count - 1)}}>Decrease</button>
     </div>
   )
 }
