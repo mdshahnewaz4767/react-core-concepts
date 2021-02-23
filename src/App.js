@@ -20,6 +20,9 @@ function App() {
           {
             naiyoks.map(naiyok => <li key={naiyok.toString()}>{naiyok}</li>)
           }
+          {
+            products.map(product => <li>{product.name}</li>)
+          }
         </ul>
           {
             products.map(product => <Product product={product}></Product>)
