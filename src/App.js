@@ -1,20 +1,30 @@
 import './App.css';
 
 function App() { 
-  const naiyok = ["Anwar", "Jafor", "Alomgir", "Razzak"];
+  const naiyoks = ["Anwar", "Jafor", "Alomgir", "Razzak", "Bappi"];
   const products = [
     {name: "Photoshop", price: "$99.90"},
     {name: "Illustrator", price: "$60.07"},
     {name: "PDF Reader", price: "$10.11"}
   ]
+  const productNames = products.map(product => product.name);
+  console.log(productNames);
+  const naiyokNames = naiyoks.map(naiyok => naiyok);
+  console.log(naiyokNames);
+
   return (
     <div className="App">
       <header className="App-header">
         <p>I am a React Person</p>
+        <ul>
+          {
+            naiyoks.map(naiyok => <li key={naiyok.toString()}>{naiyok}</li>)
+          }
+        </ul>
         <Product product={products[0]}></Product>
         <Product product={products[1]}></Product>
         <Product product={products[2]}></Product>
-        <Person name={naiyok[0]} job="Dorsok"></Person>
+        <Person name={naiyoks[0]} job="Dorsok"></Person>
         <Person name="Newaz" job="Football"></Person>
       </header>
     </div>
@@ -32,7 +42,7 @@ function Product(props) {
     margin: '5px'
   }
   const {name, price} = props.product;
-  console.log(name, price);
+  // console.log(name, price);
   return (
     <div style={productStyle}>
       <h2>{name}</h2>
