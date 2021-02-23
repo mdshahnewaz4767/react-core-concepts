@@ -9,8 +9,8 @@ function App() {
   ]
   const productNames = products.map(product => product.name);
   console.log(productNames);
-  const naiyokNames = naiyoks.map(naiyok => naiyok);
-  console.log(naiyokNames);
+  // const naiyokNames = naiyoks.map(naiyok => naiyok);
+  // console.log(naiyokNames);
 
   return (
     <div className="App">
@@ -21,9 +21,10 @@ function App() {
             naiyoks.map(naiyok => <li key={naiyok.toString()}>{naiyok}</li>)
           }
         </ul>
+          {
+            products.map(product => <Product product={product}></Product>)
+          }
         <Product product={products[0]}></Product>
-        <Product product={products[1]}></Product>
-        <Product product={products[2]}></Product>
         <Person name={naiyoks[0]} job="Dorsok"></Person>
         <Person name="Newaz" job="Football"></Person>
       </header>
