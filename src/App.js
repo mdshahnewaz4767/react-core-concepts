@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 
 function App() { 
@@ -18,6 +18,7 @@ function App() {
       <header className="App-header">
         <p>I am a React Person</p>
         <Counter></Counter>
+        <Users></Users>
         <ul>
           {
             naiyoks.map(naiyok => <li key={naiyok.toString()}>{naiyok}</li>)
@@ -49,6 +50,30 @@ function Counter(){
       <h1>Counter: {count}</h1>
       <button onClick={handleIncrease}>Increase</button>
       <button onClick={() => {setCount(count - 1)}}>Decrease</button>
+    </div>
+  )
+}
+//Load dynamic data, API call useEffect integrate state
+function Users(){
+  const [users, setUsers] = useState([])
+  useEffect(() => {
+    console.log('Calling Effect');
+    fetch("https://jsonplaceholder.typicode.com/users")
+    .then(res => res.json())
+    .then(data => 
+      {
+        console.log(data);
+        setUsers(data);
+      })
+  }, [])
+  return (
+    <div>
+      <h3>Dynamic Users: {users.length}</h3>
+      <ul>
+        {
+          users.map(user => <li>{user.name}</li>)
+        }
+      </ul>
     </div>
   )
 }
